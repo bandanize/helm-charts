@@ -1,0 +1,32 @@
+replicaCount: 1
+
+image:
+  repository: postgres
+  pullPolicy: IfNotPresent
+  tag: "16"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: "postgres" # Forces service name to be 'postgres' to match Backend default config
+
+auth:
+  username: admin
+  password: admin
+  database: bandanize
+
+persistence:
+  enabled: true
+  size: 1Gi
+  # storageClass: "-" # Uncomment to use default or specify a class
+
+service:
+  type: ClusterIP
+  port: 5432
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 256Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 256Mi
