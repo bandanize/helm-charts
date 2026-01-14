@@ -3,54 +3,54 @@ entries:
   backend:
   - apiVersion: v2
     appVersion: 0.0.5
-    created: "2026-01-14T16:29:15.874382256Z"
-    description: A Helm chart for Bandanize Backend
-    digest: 690b369babf05bd9803e077d297722b61a22ec32dba7a78ac1b693361f503409
+    created: "2026-01-14T16:43:03.763692513Z"
+    description: A Helm chart for Bandanize Backend.
+    digest: 5c09cc221c69f12a01eff75810e3db8fa536191cd8ab03f773b56be3b0a068a3
     name: backend
     type: application
     urls:
-    - https://r-dvl.github.io/homelab-charts/backend-0.0.5.tgz
+    - https://bandanize.github.io/helm-charts/backend-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v2
     appVersion: 0.0.4
-    created: "2026-01-14T16:29:15.874079658Z"
+    created: "2026-01-14T16:43:03.76339521Z"
     description: A Helm chart for Bandanize Backend
     digest: 42b68dd171c0081a7989ededffa33fc685ef26c6ffef1935fd629c510e21b158
     name: backend
     type: application
     urls:
-    - https://r-dvl.github.io/homelab-charts/backend-0.0.4.tgz
+    - https://bandanize.github.io/helm-charts/backend-0.0.4.tgz
     version: 0.0.4
   frontend:
   - apiVersion: v2
     appVersion: 0.0.5
-    created: "2026-01-14T16:29:15.874845258Z"
-    description: A Helm chart for Bandanize Frontend
-    digest: 191ab923198436834db6f0bb9237082c3b723a1fe55e3f8798ab0780c49f91db
+    created: "2026-01-14T16:43:03.764226787Z"
+    description: A Helm chart for Bandanize Frontend.
+    digest: f44c388fcae5944ae6418051e965055810d5a0e8d14885451a0d88b5d71c4b33
     name: frontend
     type: application
     urls:
-    - https://r-dvl.github.io/homelab-charts/frontend-0.0.5.tgz
+    - https://bandanize.github.io/helm-charts/frontend-0.0.5.tgz
     version: 0.0.5
   - apiVersion: v2
     appVersion: 0.0.4
-    created: "2026-01-14T16:29:15.874630639Z"
+    created: "2026-01-14T16:43:03.763965431Z"
     description: A Helm chart for Bandanize Frontend
     digest: 7b2dac9481bfa764cb14fe3435c1ee23fa24e23028be065f58e01b4216e33e98
     name: frontend
     type: application
     urls:
-    - https://r-dvl.github.io/homelab-charts/frontend-0.0.4.tgz
+    - https://bandanize.github.io/helm-charts/frontend-0.0.4.tgz
     version: 0.0.4
   postgres:
   - apiVersion: v2
     appVersion: 16.0.0
-    created: "2026-01-14T16:29:15.875018911Z"
+    created: "2026-01-14T16:43:03.764436738Z"
     description: A Helm chart for Postgres Database
-    digest: ca1eee04af5fa1442b37ad1b204e8c753206d8f0f95943e193db3aa63a1e6863
+    digest: 60a77ce134c75471b27f975f104fe83ebde0b033b24a21485c6362b36533c197
     name: postgres
     type: application
     urls:
-    - https://r-dvl.github.io/homelab-charts/postgres-0.1.0.tgz
+    - https://bandanize.github.io/helm-charts/postgres-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-14T16:29:15.873652056Z"
+generated: "2026-01-14T16:43:03.762921669Z"
