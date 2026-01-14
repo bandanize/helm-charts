@@ -1,0 +1,36 @@
+apiVersion: v1
+entries:
+  backend:
+  - apiVersion: v2
+    appVersion: 0.0.4
+    created: "2026-01-14T16:27:12.102236765Z"
+    description: A Helm chart for Bandanize Backend
+    digest: 42b68dd171c0081a7989ededffa33fc685ef26c6ffef1935fd629c510e21b158
+    name: backend
+    type: application
+    urls:
+    - https://r-dvl.github.io/homelab-charts/backend-0.0.4.tgz
+    version: 0.0.4
+  frontend:
+  - apiVersion: v2
+    appVersion: 0.0.4
+    created: "2026-01-14T16:27:12.102543792Z"
+    description: A Helm chart for Bandanize Frontend
+    digest: 7b2dac9481bfa764cb14fe3435c1ee23fa24e23028be065f58e01b4216e33e98
+    name: frontend
+    type: application
+    urls:
+    - https://r-dvl.github.io/homelab-charts/frontend-0.0.4.tgz
+    version: 0.0.4
+  postgres:
+  - apiVersion: v2
+    appVersion: 16.0.0
+    created: "2026-01-14T16:27:12.102735502Z"
+    description: A Helm chart for Postgres Database
+    digest: 8b59b29a4420b7964c2eb9ed3b4ba66ada4db4f27628da4bf105ce8e1b4c4230
+    name: postgres
+    type: application
+    urls:
+    - https://r-dvl.github.io/homelab-charts/postgres-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-01-14T16:27:12.101756846Z"
