@@ -39,8 +39,19 @@ spec:
             {{- if .Values.env }}
             {{- toYaml .Values.env | nindent 12 }}
             {{- end }}
+          volumeMounts:
+            {{- if .Values.persistence.enabled }}
+            - name: storage
+              mountPath: {{ .Values.persistence.path }}
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        {{- if .Values.persistence.enabled }}
+        - name: storage
+          persistentVolumeClaim:
+            claimName: {{ include "backend.fullname" . }}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

@@ -57,12 +57,18 @@ resources: {}
 
 env:
   - name: SPRING_DATASOURCE_URL
-    value: "jdbc:postgresql://postgres:5432/bandanize" # Example default for k8s
+    value: "jdbc:postgresql://postgres:5432/bandanize"
   - name: SPRING_DATASOURCE_USERNAME
     value: "admin"
   - name: SPRING_DATASOURCE_PASSWORD
     value: "admin"
   - name: SPRING_JPA_HIBERNATE_DDL_AUTO
     value: "update"
-  - name: CDN_URL
-    value: "http://cdn-service:8181" # Example default for k8s internal service
+
+persistence:
+  enabled: true
+  storageClass: "manual"
+  accessMode: ReadWriteOnce
+  size: 15Gi
+  path: /app/uploads
+  hostPath: /DATA/AppData/bandanize/uploads
