@@ -3,9 +3,9 @@ entries:
   backend:
   - apiVersion: v2
     appVersion: 0.0.7
-    created: "2026-01-14T22:01:32.810257975Z"
+    created: "2026-01-15T08:39:40.696912103Z"
     description: A Helm chart for Bandanize Backend.
-    digest: 09aee1ff7057ac6949e78b498770b14932e2da396be4af3d53cb7baba93be245
+    digest: 04ef6f7a7c8eb9d1e94d91a09aa4f3fe405ad5ffad46b72cfe7f32fdb678ac04
     name: backend
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 0.0.7
   - apiVersion: v2
     appVersion: 0.0.6
-    created: "2026-01-14T22:01:32.809981338Z"
+    created: "2026-01-15T08:39:40.696641889Z"
     description: A Helm chart for Bandanize Backend.
     digest: dd447e39644e1a7b8f3f18bfab1e10796183f0bf1a1ea14de7861315148b63e5
     name: backend
@@ -23,7 +23,7 @@ entries:
     version: 0.0.6
   - apiVersion: v2
     appVersion: 0.0.5
-    created: "2026-01-14T22:01:32.80967711Z"
+    created: "2026-01-15T08:39:40.696356427Z"
     description: A Helm chart for Bandanize Backend.
     digest: 5c09cc221c69f12a01eff75810e3db8fa536191cd8ab03f773b56be3b0a068a3
     name: backend
@@ -33,7 +33,7 @@ entries:
     version: 0.0.5
   - apiVersion: v2
     appVersion: 0.0.4
-    created: "2026-01-14T22:01:32.809373783Z"
+    created: "2026-01-15T08:39:40.696024838Z"
     description: A Helm chart for Bandanize Backend
     digest: 42b68dd171c0081a7989ededffa33fc685ef26c6ffef1935fd629c510e21b158
     name: backend
@@ -43,8 +43,18 @@ entries:
     version: 0.0.4
   frontend:
   - apiVersion: v2
+    appVersion: 0.0.8
+    created: "2026-01-15T08:39:40.698150823Z"
+    description: A Helm chart for Bandanize Frontend.
+    digest: e96f4fd58f25a4fe1bc6d015d76d47e54cfa454183e1d3d656007023070246a5
+    name: frontend
+    type: application
+    urls:
+    - https://bandanize.github.io/helm-charts/frontend-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
     appVersion: 0.0.7
-    created: "2026-01-14T22:01:32.811236163Z"
+    created: "2026-01-15T08:39:40.697911868Z"
     description: A Helm chart for Bandanize Frontend.
     digest: 9713c8bba985b53fa0ad81f7cc7991ec949bc2f6d8e4a04745142e34ee8439ba
     name: frontend
@@ -54,7 +64,7 @@ entries:
     version: 0.0.7
   - apiVersion: v2
     appVersion: 0.0.6
-    created: "2026-01-14T22:01:32.811005923Z"
+    created: "2026-01-15T08:39:40.697676999Z"
     description: A Helm chart for Bandanize Frontend.
     digest: 1b75af6e346576128221bde9fc5945c8e52c4529923ae47078738387202512c7
     name: frontend
@@ -64,7 +74,7 @@ entries:
     version: 0.0.6
   - apiVersion: v2
     appVersion: 0.0.5
-    created: "2026-01-14T22:01:32.810772006Z"
+    created: "2026-01-15T08:39:40.697419509Z"
     description: A Helm chart for Bandanize Frontend.
     digest: f44c388fcae5944ae6418051e965055810d5a0e8d14885451a0d88b5d71c4b33
     name: frontend
@@ -74,7 +84,7 @@ entries:
     version: 0.0.5
   - apiVersion: v2
     appVersion: 0.0.4
-    created: "2026-01-14T22:01:32.81053351Z"
+    created: "2026-01-15T08:39:40.697153944Z"
     description: A Helm chart for Bandanize Frontend
     digest: 7b2dac9481bfa764cb14fe3435c1ee23fa24e23028be065f58e01b4216e33e98
     name: frontend
@@ -85,12 +95,12 @@ entries:
   postgres:
   - apiVersion: v2
     appVersion: 16.0.0
-    created: "2026-01-14T22:01:32.811468728Z"
+    created: "2026-01-15T08:39:40.698354453Z"
     description: A Helm chart for Postgres Database
-    digest: 57d9fd94a4e0f90446f33f9cbd813b2b44d8a3310f44197fa4b59dbc24410eb1
+    digest: 9d9528246651a0b8ef1802076d78f0b9155d5d0efdeb6611566be4e0ca734e6b
     name: postgres
     type: application
     urls:
     - https://bandanize.github.io/helm-charts/postgres-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-14T22:01:32.808903544Z"
+generated: "2026-01-15T08:39:40.695578075Z"
