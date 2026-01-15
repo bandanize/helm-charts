@@ -58,6 +58,8 @@ resources: {}
 env:
   - name: SPRING_DATASOURCE_URL
     value: "jdbc:postgresql://postgres:5432/bandanize"
+  - name: STORAGE_LOCATION
+    value: "/app/uploads"
   - name: SPRING_DATASOURCE_USERNAME
     value: "admin"
   - name: SPRING_DATASOURCE_PASSWORD
