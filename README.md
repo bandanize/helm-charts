@@ -1,47 +1,50 @@
 # Bandanize Helm Charts
 
-Bienvenido al repositorio de Helm Charts oficial para **Bandanize**. Aquí encontrarás los paquetes necesarios para desplegar la aplicación completa en Kubernetes.
+Kubernetes deployment charts for the full Bandanize stack.
 
-## 📦 Añadir el Repositorio
+## Components
 
-Para usar estos charts, añade el repositorio a tu configuración de Helm:
+The chart deploys the following microservices:
+- **Backend**: Spring Boot API service.
+- **Frontend**: Nginx serving the React SPA.
+- **Postgres**: StatefulSet for the database (optional, for dev/test).
 
-```bash
-helm repo add bandanize https://bandanize.github.io/helm-charts
-helm repo update
+## Directory Structure
+
+```
+helm-charts/
+├── charts/             # Dependency charts
+│   ├── backend/        # Backend deployment & service
+│   ├── frontend/       # Frontend deployment & service
+│   └── postgres/       # Database configuration
+├── Chart.yaml          # Main chart definition
+└── values.yaml         # Global configuration values
 ```
 
-## 🚀 Charts Disponibles
+## Usage
 
-| Chart | Versión Actual | Descripción |
-|-------|----------------|-------------|
-| **[backend](charts/backend)** | `0.0.5` | API REST en Spring Boot (Java 17). Maneja usuarios, bandas y lógica de negocio. |
-| **[frontend](charts/frontend)** | `0.0.5` | Aplicación SPA en React + Vite servida con Nginx. Incluye proxy inverso a `/api`. |
-| **[postgres](charts/postgres)** | `0.1.0` | Base de datos PostgreSQL con soporte para acceso externo via Traefik (TCP/SNI). |
+### Prerequisites
+- Kubernetes Cluster (k3d, minikube, or cloud)
+- Helm 3+
 
-## 🛠️ Instalación y Uso
+### Architecture details
 
-### Desplegar Backend
-```bash
-helm install backend bandanize/backend \
-  --set env.SPRING_DATASOURCE_PASSWORD=tu_password \
-  --set env.JWT_SECRET=tu_secreto_jwt
-```
+- **Ingress**: Configured to route `api.bandanize.local` to backend and `bandanize.local` to frontend.
+- **Persistence**: Using PVCs for database storage and file uploads (`/app/uploads`).
 
-### Desplegar Frontend
-```bash
-helm install frontend bandanize/frontend \
-  --set ingress.enabled=true \
-  --set ingress.host=bandanize.local
-```
+### Installation
 
-### Desplegar Postgres (con Ingress TCP)
-```bash
-helm install postgres bandanize/postgres \
-  --set postgresqlPassword=admin \
-  --set ingress.enabled=true \
-  --set ingress.host=postgres.bandanize.local
-```
+1. Navigate to the root folder:
+   ```bash
+   cd helm-charts
+   ```
 
-## 🤝 Contribuir
-Los charts fuente se encuentran en el directorio `charts/`. Cualquier cambio pusheado a `main` disparará automáticamente la release y actualización del `index.yaml` en la carpeta `docs/`.
+2. Install the chart:
+   ```bash
+   helm install bandanize . -n bandanize --create-namespace
+   ```
+
+3. Uninstall:
+   ```bash
+   helm uninstall bandanize -n bandanize
+   ```
