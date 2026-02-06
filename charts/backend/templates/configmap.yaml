@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "backend.fullname" . }}-config
+  labels:
+    {{- include "backend.labels" . | nindent 4 }}
+data:
+  application.properties: |
+    {{- if .Values.applicationProperties }}
+    {{- range $key, $value := .Values.applicationProperties }}
+    {{ $key }}={{ $value }}
+    {{- end }}
+    {{- else }}
+    # Default properties if none provided
+    spring.application.name=bandanize
+    {{- end }}

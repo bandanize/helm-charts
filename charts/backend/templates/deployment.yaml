@@ -39,11 +39,16 @@ spec:
             {{- if .Values.env }}
             {{- toYaml .Values.env | nindent 12 }}
             {{- end }}
+          envFrom:
+            - secretRef:
+                name: {{ include "backend.fullname" . }}-secrets
           volumeMounts:
             {{- if .Values.persistence.enabled }}
             - name: storage
               mountPath: {{ .Values.persistence.path }}
             {{- end }}
+            - name: config
+              mountPath: /app/config
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
@@ -52,6 +57,9 @@ spec:
           persistentVolumeClaim:
             claimName: {{ include "backend.fullname" . }}
         {{- end }}
+        - name: config
+          configMap:
+            name: {{ include "backend.fullname" . }}-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

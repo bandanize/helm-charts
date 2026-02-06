@@ -58,12 +58,29 @@ env:
     value: "jdbc:postgresql://postgres:5432/bandanize"
   - name: STORAGE_LOCATION
     value: "/app/uploads"
-  - name: SPRING_DATASOURCE_USERNAME
-    value: "admin"
-  - name: SPRING_DATASOURCE_PASSWORD
-    value: "admin"
   - name: SPRING_JPA_HIBERNATE_DDL_AUTO
     value: "update"
+
+# Application Properties (will be mounted as application.properties)
+applicationProperties:
+  spring.application.name: bandanize
+  spring.datasource.driverClassName: org.postgresql.Driver
+  spring.jpa.show-sql: "false"
+  spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+  management.endpoints.web.exposure.include: health
+  management.endpoint.health.show-details: always
+  spring.servlet.multipart.max-file-size: 10GB
+  spring.servlet.multipart.max-request-size: 10GB
+  storage.type: local
+  resend.from.email: onboarding@bandanize.com
+  app.frontend.url: https://bandanize.com
+
+# Secrets (will be injected as env vars)
+secrets:
+  SPRING_DATASOURCE_USERNAME: "change-me"
+  SPRING_DATASOURCE_PASSWORD: "change-me"
+  RESEND_API_KEY: "change-me"
 
 persistence:
   enabled: true
