@@ -53,13 +53,7 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-env:
-  - name: SPRING_DATASOURCE_URL
-    value: "jdbc:postgresql://postgres:5432/bandanize"
-  - name: STORAGE_LOCATION
-    value: "/app/uploads"
-  - name: SPRING_JPA_HIBERNATE_DDL_AUTO
-    value: "update"
+env: []
 
 # Application Properties (will be mounted as application.properties)
 applicationProperties:
@@ -73,8 +67,21 @@ applicationProperties:
   spring.servlet.multipart.max-file-size: 10GB
   spring.servlet.multipart.max-request-size: 10GB
   storage.type: local
-  resend.from.email: onboarding@bandanize.com
+  resend.from.email: support@bandanize.com
   app.frontend.url: https://bandanize.com
+  # Moved from env
+  spring.datasource.url: "jdbc:postgresql://postgres:5432/bandanize"
+  storage.location: "/app/uploads"
+  spring.jpa.hibernate.ddl-auto: "update"
+  # Security Configuration
+  # CORS Allowed Origins (comma separated)
+  app.cors.allowed-origins: "change-me"
+
+  # JWT Configuration
+  app.jwt.secret: "change-me"
+  app.jwt.expiration: "36000000"
+  app.jwt.reset-token.expiration: "900000"
+  app.jwt.verification-token.expiration: "86400000"
 
 # Secrets (will be injected as env vars)
 secrets:
