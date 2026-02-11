@@ -83,6 +83,10 @@ applicationProperties:
   app.jwt.reset-token.expiration: "900000"
   app.jwt.verification-token.expiration: "86400000"
 
+  #Swagger
+  springdoc.swagger-ui.enabled: "false"
+  springdoc.api-docs.enabled: "false"
+
 # Secrets (will be injected as env vars)
 secrets:
   SPRING_DATASOURCE_USERNAME: "change-me"
